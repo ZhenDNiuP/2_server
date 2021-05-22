@@ -12,7 +12,7 @@ router.post('/addUser', (req, res) => {
     let conn = new dbConn().getConn();
 
     let uid = getRandom();
-    conn.query(sqlStr, [uid, params.uname, params.phone, params.idcard], (err, result) => {
+    conn.query(sqlStr, [uid, params.uname, params.phone, params.idcard, params.password], (err, result) => {
         if (err) {
             res.json(err);
         } else {
