@@ -27,7 +27,7 @@ router.post('/selectUser', (req, res) => {
     let sqlStr = sql.user.select;
     let params = req.body;
     let conn = new dbConn().getConn();
-    conn.query(sqlStr, [params.phone], (err, result) => {
+    conn.query(sqlStr, [params.phone, params.password], (err, result) => {
         if (err) {
             res.json(err);
         } else {
