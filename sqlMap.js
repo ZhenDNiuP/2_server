@@ -17,6 +17,13 @@ var sqlMap = {
         add: 'insert into product(p_id, p_name, origin, infotime, storage, transport, up_id) values (?, ?, ?, ?, ?, ?, ?)',
         //修改产品
         update: 'update product set p_name = ?, origin = ?, infotime = ?, storage = ?, transport = ? where p_id = ?'
+    },
+
+    code: {
+        //查询该账户二维码信息
+        select: 'select * from code where cu_id = ?',
+        //添加二维码信息
+        add: 'insert into code(cp_id, cp_name, codetime, cu_id) values (?, ?, ?, ?)'
     }
 };
 
