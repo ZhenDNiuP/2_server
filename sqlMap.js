@@ -3,7 +3,9 @@ var sqlMap = {
         // 添加用户
         add: 'insert into user(u_id, u_name, phone, idcard) values (?, ?, ?, ?)',
         // 查询用户
-        select: 'select * from user where phone = ?',
+        select: 'select u_id, u_name, phone, idcard from user where phone = ? and password = ?',
+        // 查询手机号
+        selectPhone: 'select u_id from user where u_id = ?'
     },
 
     product: {

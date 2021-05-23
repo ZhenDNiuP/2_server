@@ -8,7 +8,7 @@ class dbConn {
       host: 'localhost',
       port: '3306',
       user: 'root', // Mysql管理员用户名
-      password: '123456', // Mysql管理员密码
+      password: 'z1581787', // Mysql管理员密码
       database: 'traceability', // 数据库名
     })
     conn.connect()
