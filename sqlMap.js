@@ -1,11 +1,13 @@
 var sqlMap = {
     user: {
         // 添加用户
-        add: 'insert into user(u_id, u_name, phone, idcard) values (?, ?, ?, ?)',
+        add: 'insert into user(u_id, u_name, phone, idcard, password) values (?, ?, ?, ?, ?)',
         // 查询用户
         select: 'select u_id, u_name, phone, idcard from user where phone = ? and password = ?',
         // 查询手机号
-        selectPhone: 'select u_id from user where u_id = ?'
+        selectPhone: 'select u_id from user where u_id = ?',
+        // 查询用户信息
+        selectInfo: 'select u_id, u_name, phone, idcard from user where u_id = ?'
     },
 
     product: {

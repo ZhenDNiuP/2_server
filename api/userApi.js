@@ -37,6 +37,21 @@ router.post('/selectUser', (req, res) => {
     conn.end();
 });
 
+// 查询用户信息
+router.post('/selectUserInfo', (req, res) => {
+    let sqlStr = sql.user.selectInfo;
+    let params = req.body;
+    let conn = new dbConn().getConn();
+    conn.query(sqlStr, [params.uid], (err, result) => {
+        if (err) {
+            res.json(err);
+        } else {
+            res.json(result);
+        }
+    });
+    conn.end();
+});
+
 function getRandom(){
     var random = Math.floor((Math.random()+Math.floor(Math.random()*9+1))*Math.pow(10,9));
     return random;

@@ -14,6 +14,8 @@ app.use(bodyparser.urlencoded({
     extended: false
 }))
 
+app.use(express.static('qrcode'));
+
 app.use('/api/user', userApi),
 app.use('/api/product', productApi),
 app.use('/api/code', codeApi),
