@@ -2,6 +2,8 @@ const http = require('http')
 const bodyparser = require('body-parser')
 const express = require('express')
 const userApi = require('./api/userApi')
+const productApi = require('./api/productApi')
+const codeApi = require('./api/codeApi')
 const dbConn = require('./utils/dbConn')
 
 const app = express()
@@ -13,6 +15,8 @@ app.use(bodyparser.urlencoded({
 }))
 
 app.use('/api/user', userApi),
+app.use('/api/product', productApi),
+app.use('/api/code', codeApi),
 
 server = app.listen(8081,function(){
     console.log("success");
